@@ -1,0 +1,14 @@
+name: dotnet-oidc-example
+
+services:
+  my-keycloak:
+    image: quay.io/keycloak/keycloak:24.0
+    ports:
+      - "8080:8080"
+    environment:
+      KC_HOSTNAME: localhost
+      KC_HOSTNAME_PORT: 8080
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    command:
+      - "start-dev"
